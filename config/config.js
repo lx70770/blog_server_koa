@@ -1,3 +1,5 @@
+const environment = process.env.NODE_ENV
+
 module.exports = {
   environment: 'dev',
   database: {
@@ -5,7 +7,7 @@ module.exports = {
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'password'
+    password: environment === 'production' ? 'Walx00..!' : 'password'
   },
   security: { secretKey: 'walx70770', expiresIn: 60 * 60 }
 }
