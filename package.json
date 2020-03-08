@@ -1,0 +1,25 @@
+{
+  "name": "blog-server-koa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev nodemon app.js"
+  },
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "bcryptjs": "^2.4.3",
+    "cross-env": "^7.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^8.0.8",
+    "mysql2": "^2.1.0",
+    "require-directory": "^2.1.1",
+    "sequelize": "^5.21.5",
+    "validator": "^12.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
