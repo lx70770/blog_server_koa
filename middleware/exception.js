@@ -4,12 +4,14 @@
 // 区分已知错误  和未知错误
 const { HttpException } = require('../core/http-exception')
 
+const environment = process.env.NODE_ENV
+
 const catchError = async (ctx, next) => {
   try {
     await next()
   } catch (error) {
     const isHttpException = error instanceof HttpException
-    const isDev = global.config.environment === 'dev'
+    const isDev = environment === 'development'
     if (!isHttpException && isDev) {
       throw error
     }
