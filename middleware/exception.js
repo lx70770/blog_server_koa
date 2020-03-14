@@ -16,14 +16,14 @@ const catchError = async (ctx, next) => {
       throw error
     }
     if (isHttpException) {
-      const { msg, code, errorCode, data } = error
+      const { msg, errorCode, data } = error
       ctx.body = {
         msg,
         error_code: errorCode,
         request: `${ctx.method} ${ctx.path}`,
         data
       }
-      ctx.status = code
+      ctx.status = 200
     } else {
       // 全局异常处理
       ctx.body = {
